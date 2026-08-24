@@ -1,0 +1,72 @@
+:root{
+  --bg-main: #fef08a; /* your light yellow background */
+  --text-dark: #1f2937;
+  --card-bg: #ffffff;
+  --primary-btn: #111827;
+  --primary-btn-text: #ffffff;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: rgb(235, 232, 157);
+    color: black;
+}
+
+header{
+    padding: 20px;
+}
+
+a{
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.hero{
+    padding: 60px 20px;
+}
+
+button{
+    background-color: #1f2937;
+    color: rgba(245, 245, 245, 0.863);
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+         background-color: aqua;
+}
+
+.card{
+    background-color: var(--card-bg);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+
+}
+
+input{
+    display:block;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+}
+
+input:focus{
+    outline: 2px solid rgb(127, 112, 224) ;
+    border-radius: 6px;
+}
+
+input:invalid:not(:placeholder-shown){
+    border: 2px solid rgb(127, 14, 33);
+}
+
+section{
+    padding: 20px;
+}
