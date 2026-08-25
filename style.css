@@ -20,8 +20,18 @@ html{
 
 body{
     font-family: 'Plus Jakarta Sans', sans-serif;
+    background: linear-gradient(-45deg, #fef08a, #fed7aa, #fbcfe8, #e9e8a8);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
     color: #1a1a1a;
-    background-color: #f8ec96;
+    min-height: 100vh;
+    margin: 0;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 header{
@@ -76,52 +86,126 @@ a{
 
 h1{
     font-family: 'Syne', sans-serif;
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     font-weight: 800;
     font-stretch: normal;
     transform: none;
-    letter-spacing: -0.5px;
+    letter-spacing: -1.5px;
     text-transform: lowercase;
     color: #000000;
     margin: 0; 
+    background: linear-gradient(90deg, #000000, #9333ea, #ec4899, #000000);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    animation: shine 4s linear infinite;
+    margin: 0;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
 }
 
 h2{
     font-family: 'Syne', sans-serif;
-    font-size: 1.85rem;
-    font-weight: 700;
+    font-size: 3.8rem;
+    font-weight: 800;
     font-stretch: normal;
     transform: none;
     color: #111827;
-    letter-spacing: -0.3px;
-    margin-bottom: 8px;
-    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    line-height: 1.05;
+    text-transform: capitalize;
+    background: linear-gradient(90deg, #4c1d95, #831843, #1e1b4b, #9f1239, #4c1d95);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 5s linear infinite;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .hero{
-    padding: 60px 0 40px 0;
-    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0 ;
+    width: 100%;
+    gap: 60px;
+}
+
+.hero-text a.btn-primary{
+    display:inline-block;
+    padding: 12px 28px;
+    background-color: #111827;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    flex: 1.2;
+    max-width: 650px;
+}
+
+.hero-text a.btn-primary:hover {
+  background-color: #9333ea;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(147, 51, 234, 0.3);
+}
+
+.hero-image{
+    flex: 1;
+}
+
+.hero-image img{
+    width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  
+}
+
+.hero-image img:hover {
+  transform: rotate(0deg) scale(1.02);
 }
 
 .hero p{
-    font-size: 1.1rem;
-    color: #444;
-    margin-bottom: 24px;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    color: #374151;
+    margin-bottom: 32px;
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 button{
-    background-color: #1f2937;
-    color: rgba(245, 245, 245, 0.863);
-    padding: 10px 18px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #111827;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 button:hover{
-         background-color: rgb(198, 197, 197);
-         color: black;
+         background-color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.25);
 }
 
 .card{
@@ -146,6 +230,11 @@ button:hover{
     object-position: center;
     border-radius: 10px;
     margin-bottom: 12px;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img{
+    transform: scale(1.08);
 }
 
 .card-content{
@@ -235,9 +324,11 @@ form{
 }
 
 .form-container{
+    display: flex;
+    justify-content: center;
     max-width: 420px;
     margin: 40px auto;
-    padding: 30px;
+    padding: 60px 0 40px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.85);
@@ -253,33 +344,80 @@ form{
         box-sizing: border-box;
 }
 
+.form-card {
+  background: #ffffff;
+  padding: 36px 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay:target .form-card {
+  transform: translateY(0);
+}
+
+.form-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.form-card p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
 .image-wrapper{
     position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 12px;
     width: 100%;
 }
 
 .badge{
     position:absolute;
-    top: 10px;
-    left: 10px;
+    top: 12px;
+    left: 12px;
     background-color: #1f2937;
-    color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 4px 10px;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 5px 12px;
     border-radius: 20px;
     z-index: 2;
+    letter-spacing: 0.5px;
 }
+
+.badge-hot { background-color: #ef4444; }
+.badge-new { background-color: #10b981; }
+.badge-sale { background-color: #8b5cf6; }
 
 .card-link{
     display:inline-block;
     margin-top: auto;
-    padding-top: 12px;
-    color: #000000;
+    padding: 8px 16px;
+    color: #111827;
+    background: #f3f4f6;
     font-weight: 700;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     text-decoration: none;
-    transition: color 0.2s ease;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover .card-link{
+    background: #111827;
+    color: #ffffff;
 }
 
 .card-link:hover{
@@ -287,7 +425,83 @@ form{
     text-decoration: underline;
 }
 
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label{
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
 .input-group input:focus{
-    border-color: #1f2937;
-    box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.15);
+    outline: none;
+    background-color: #ffffff;
+    border-color: #111827;
+    box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.08);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #111827;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.modal-overlay:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #666;
+  line-height: 1;
 }

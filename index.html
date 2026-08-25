@@ -16,28 +16,32 @@
     </div>
     <nav>
         <a href="#Clothes">Clothes</a>
-        <a href="#Summer-deals">Summer Deals</a>
-        <a href="#About-You">About You</a>
+        <a href="#deals">Summer Deals</a>
+        <a href="#Join">Join</a>
     </nav>
 
     </header>
     <main>
         <section class="hero" id="Clothes">
-            <h1>Clothes</h1>
+            <div class="hero-text">
+                 <h2>Clothes</h2>
             <p>
                Your search for comfortable, trendy and affordable clothes ends here!!
             </p>
-            <button>
-                Get Started
-            </button>
-            
+            <a href="#deals" class="btn-primary">Get Started &darr;</a>
+            </div>
+            <div class="hero-image">
+                <img src="hero.jpg" alt="Fashion Banner">
+            </div>
         </section>
-        <section id="Summer-deals">
+
+
+        <section id="deals" class="deals-section">
             <h2>Summer Deals</h2>
             <div class="card-container">
             <div class="card">
                 <div class="image-wrapper">
-                    <span class="badge">Trending</span>
+                    <span class="badge badge-hot">HOT</span>
                     <img src="clothes.webp" alt="Tops">
                 </div>
                 <div class="card-content">
@@ -48,35 +52,58 @@
                 <a href="#" class="card-link">Shop Tops &rarr;</a>
                 </div>
             </div>
+
+
             <div class="card">
-                <img src="bottoms.webp" alt="bottom">
-                <h3>Bottoms</h3>
+                <div class="image-wrapper">
+                    <span class="badge badge-new">NEW</span>
+                    <img src="bottoms.webp" alt="bottom">
+                </div>
+                <div class="card-content">
+                    <h3>Bottoms</h3>
                 <p>Want Shorts? Trousers? Jeans?<br>
                      We got you!</p>
+                     <a href="#" class="card-link">Shop Bottoms &rarr;</a>
+                </div>
             </div>
-            <div class="card">
-                <img src="accessories.webp" alt="accessories">
-                <h3>Accessories</h3>
+
             
+            <div class="card">
+                <div class="image-wrapper">
+                    <span class="badge badge-sale">20% OFF</span>
+                    <img src="accessories.webp" alt="accessories">
+                </div>
+                <div class="card-content">
+                    <h3>Accessories</h3>
             <p>Jhumkas, Maangtikas, Necklaces... <br>
-            Name it. We have it.
-        </p>
-        </div>
+            Name it. We have it.</p>
+            <a href="#" class="card-link">Shop Accessories &rarr;</a>
             </div>
+        </div>
+    </div>
             
         </section>
-        <div>
-            <section id="About-You" class="form-container">
+
+
+        <div class="modal-overlay" id="Join">
+            <section id="Join" class="form-container">
+                <div class="form-card">
+                    <a href="#" class="close-btn">&times;</a>
+                    <h3>
+                        Join Our Newsletter!!
+                    </h3>
+                    <p>Get early access to new releases & exclusive deals!</p>
+                </div>
             <form>
-                <div>
+                <div class="input-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" placeholder="Enter your name" required>
                 </div>
-                <div>
+                <div class="input-group">
                     <label for="email">E-mail</label>
                 <input type="email" id="email" placeholder="Enter your email" required>
                 </div>
-                <button type="submit" class="btn">Join Now</button>
+                <button type="submit" class="btn-submit">Subscribe Now!</button>
             </form>
         </section>
         </div>
