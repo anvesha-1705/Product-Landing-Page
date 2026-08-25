@@ -19,7 +19,15 @@ body{
 }
 
 header{
-    padding: 20px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    display:flex;
+    gap: 20px;
 }
 
 a{
@@ -47,7 +55,6 @@ button:hover{
 .card{
     background-color: var(--card-bg);
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 8px;
 
 }
@@ -69,4 +76,21 @@ input:invalid:not(:placeholder-shown){
 
 section{
     padding: 20px;
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card-container{
+        grid-template-columns: 1fr;
+    }
 }
