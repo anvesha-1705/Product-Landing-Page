@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -12,14 +15,14 @@
         <h1>savana</h1>
     </div>
     <nav>
-        <a href="#Features">Features</a>
-        <a href="#Top-Deals">Top Deals</a>
-        <a href="#Season-Special">Season Special</a>
+        <a href="#Clothes">Clothes</a>
+        <a href="#Summer-deals">Summer Deals</a>
+        <a href="#About-You">About You</a>
     </nav>
 
     </header>
     <main>
-        <section class="hero">
+        <section class="hero" id="Clothes">
             <h1>Clothes</h1>
             <p>
                Your search for comfortable, trendy and affordable clothes ends here!!
@@ -29,22 +32,31 @@
             </button>
             
         </section>
-        <section>
+        <section id="Summer-deals">
             <h2>Summer Deals</h2>
             <div class="card-container">
             <div class="card">
-                <h3>Tops</h3>
+                <div class="image-wrapper">
+                    <span class="badge">Trending</span>
+                    <img src="clothes.webp" alt="Tops">
+                </div>
+                <div class="card-content">
+                    <h3>Tops</h3>
                 <p>
                     Get tank tops, tube tops, cami, kaaftan and a lot more at one place!!
                 </p>
+                <a href="#" class="card-link">Shop Tops &rarr;</a>
+                </div>
             </div>
             <div class="card">
+                <img src="bottoms.webp" alt="bottom">
                 <h3>Bottoms</h3>
                 <p>Want Shorts? Trousers? Jeans?<br>
                      We got you!</p>
             </div>
             <div class="card">
-                <h3>Accesories</h3>
+                <img src="accessories.webp" alt="accessories">
+                <h3>Accessories</h3>
             
             <p>Jhumkas, Maangtikas, Necklaces... <br>
             Name it. We have it.
@@ -53,7 +65,8 @@
             </div>
             
         </section>
-        <section>
+        <div>
+            <section id="About-You" class="form-container">
             <form>
                 <div>
                     <label for="name">Full Name</label>
@@ -63,9 +76,10 @@
                     <label for="email">E-mail</label>
                 <input type="email" id="email" placeholder="Enter your email" required>
                 </div>
-                <button type="submit">Join Now</button>
+                <button type="submit" class="btn">Join Now</button>
             </form>
         </section>
+        </div>
     </main>
     <footer>
         <p>&copy; 2026 Savana. All rights reserved.</p>

@@ -6,16 +6,22 @@
   --primary-btn-text: #ffffff;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..700&family=Syne:wght@700;800&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
-    font-family: sans-serif;
-    background-color: rgb(235, 232, 157);
-    color: black;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1a1a1a;
+    background-color: #f8ec96;
 }
 
 header{
@@ -27,6 +33,12 @@ header{
 
 nav{
     display:flex;
+    position:sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(233, 232, 168, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 15px 0;
     gap: 20px;
 }
 
@@ -35,8 +47,67 @@ a{
     margin-right: 15px;
 }
 
+.navbar nav a{
+    position: relative;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333333;
+    text-decoration: none;
+    margin-left: 28px;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.navbar nav a::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transition: width 0.25s ease;
+}
+
+.navbar nav a:hover::after{
+    width: 100%;
+}
+
+h1{
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-stretch: normal;
+    transform: none;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+    color: #000000;
+    margin: 0; 
+}
+
+h2{
+    font-family: 'Syne', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    font-stretch: normal;
+    transform: none;
+    color: #111827;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
 .hero{
-    padding: 60px 20px;
+    padding: 60px 0 40px 0;
+    max-width: 600px;
+}
+
+.hero p{
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 24px;
+    line-height: 1.5;
 }
 
 button{
@@ -49,14 +120,75 @@ button{
 }
 
 button:hover{
-         background-color: aqua;
+         background-color: rgb(198, 197, 197);
+         color: black;
 }
 
 .card{
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
+    transition: transform 0.25s ease;
 
+}
+
+.card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card h3{
+    font-family: 'Syne', sans-serif;
+    margin: 12px 0 6px 0;
+    color: #1a1a1a;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.card p{
+    flex-grow: 1;
+    margin: 0;
+    color: #555555;
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+.card, .form-container, button, .btn{
+    transition: transform 0.25s ease, box-shadow 0.25 ease;
+}
+
+.card:hover, .form-container:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1)
+}
+
+button:hover, .btn:hover{
+    transform: scale(1.03);
+    cursor: pointer;
 }
 
 input{
@@ -93,4 +225,69 @@ section{
     .card-container{
         grid-template-columns: 1fr;
     }
+}
+
+form{
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.form-container{
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.85);
+}
+
+.form-container input{
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-sizing: border-box;
+}
+
+.image-wrapper{
+    position: relative;
+    width: 100%;
+}
+
+.badge{
+    position:absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #1f2937;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.card-link{
+    display:inline-block;
+    margin-top: auto;
+    padding-top: 12px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-link:hover{
+    color:#6b21a8;
+    text-decoration: underline;
+}
+
+.input-group input:focus{
+    border-color: #1f2937;
+    box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.15);
 }
