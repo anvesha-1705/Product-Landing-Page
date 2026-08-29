@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..700&family=Syne:wght@700;800&display=swap');
+
 :root{
  --bg-primary: #fce7f3;        /* Soft Pastel Pink */
   --text-main: #111827;         /* Dark Text */
@@ -9,8 +11,6 @@
   --btn-bg: #111827;
   --btn-text: #ffffff;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..700&family=Syne:wght@700;800&display=swap');
 
 *{
     box-sizing: border-box;
@@ -1570,3 +1570,6 @@ body.dark-theme .form-container .close-btn:hover {
     padding: 6px;
   }
 }
+
+
+
