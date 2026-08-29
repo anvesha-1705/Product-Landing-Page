@@ -19,14 +19,36 @@
 }
 
 footer *, .main-footer *, .footer * {
-  color: #111827 ; /* Dark text for light footer */
+  color: #ffffff ; 
   
+}
+
+header
+body, 
+main, 
+section, 
+.hero, 
+.hero-container, 
+.main-content {
+  background: linear-gradient(-45deg, #f9ee9c, #fed7aa, #fbcfe8, #e9e8a8);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
 }
 
 body.dark-theme footer *, 
 body.dark-theme .main-footer *, 
 body.dark-theme .footer * {
   color: #ffffff ; /* Light text for dark footer */
+}
+
+body.dark-theme,
+body.dark-theme main,
+body.dark-theme section,
+body.dark-theme .hero,
+body.dark-theme .hero-container,
+body.dark-theme .main-content {
+  background: #0f172a ;
+  color: #ffffff ;
 }
 
 body.dark-theme p, 
@@ -38,6 +60,11 @@ body.dark-theme h4 {
   color: #ffffff ;
 }
 
+body.dark-theme footer,
+body.dark-theme .main-footer,
+body.dark-theme .footer {
+  background: #020617;
+}
 
 /* 2. Soft rounded cards with glowing subtle drop shadows */
 .card, 
@@ -51,11 +78,12 @@ body.dark-theme h4 {
 }
 
 /* 3. Deep purple-pink gradient text for headings */
-h1, h2, .brand-logo, .hero-title {
+h1, .brand-logo{
   background: linear-gradient(135deg, #31123f 0%, #831843 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientBG 8s ease infinite;
 }
 
 html{
@@ -132,6 +160,7 @@ body.dark-theme footer p, body.dark-theme footer a {
 
 footer, .main-footer, .footer {
   background-color:#fbcfe8 ;
+  background: #0f172a;
   color: #111827;
   transition: background-color 0.3s ease;
 }
@@ -217,7 +246,7 @@ h1{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
-    animation: shine 4s linear infinite;
+    animation: shine 8s linear infinite;
     margin: 0;
 }
 
@@ -231,23 +260,32 @@ h2{
     font-weight: 800;
     font-stretch: normal;
     transform: none;
-    color: #111827;
+    color: #ffffff;
     letter-spacing: -1px;
     margin-bottom: 16px;
     line-height: 1.05;
     text-transform: capitalize;
-    background: linear-gradient(90deg, #4c1d95, #831843, #1e1b4b, #9f1239, #4c1d95);
+    background: linear-gradient(90deg, 
+    #1e1b4b 0%, 
+    #0284c7 25%,
+    #7c3aed 75%, 
+    #000000 100%);
     background-size: 200% auto;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textShine 5s linear infinite;
+    -webkit-text-fill-color: transparent; 
+    animation: shine 8s linear infinite;
+    margin: 0;
 }
 
 @keyframes textShine {
   to {
     background-position: 200% center;
   }
+}
+
+body.dark-theme h1, h2 {
+  filter: drop-shadow(0 0 12px rgba(244, 114, 182, 0.4));
 }
 
 .hero{
@@ -593,7 +631,8 @@ form{
 }
 
 .form-card {
-  background: #ffffff;
+  background: linear-gradient(-45deg, #f9ee9c, #fed7aa, #fbcfe8, #e9e8a8);
+  animation: gradientBG 12s ease infinite;
   padding: 36px 40px;
   border-radius: 20px;
   width: 90%;
@@ -602,6 +641,7 @@ form{
   border: 1px solid rgba(255, 255, 255, 0.6);
   transform: translateY(20px);
   transition: transform 0.3s ease;
+  margin: 0 auto;
 }
 
 .modal-overlay:target .form-card {
@@ -1032,6 +1072,7 @@ form{
   font-size: 2.2rem;
   margin: 0 0 12px;
   background: linear-gradient(90deg, #ffffff, #fbcfe8);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1135,4 +1176,307 @@ body.dark-theme .theme-toggle-btn {
 
 .floating-badge p, .badge-icon {
   color: var(--text-main) ;
+}
+
+body.dark-theme .modal-overlay h3{
+  color: #111827;
+}
+body.dark-theme .modal-overlay p {
+  color: #374151;
+}
+
+/* Form Labels & Titles in Dark Mode */
+body.dark-theme label,
+body.dark-theme form p,
+body.dark-theme form span,
+body.dark-theme .modal-content label,
+body.dark-theme .modal-overlay label {
+  color: #ffffff ;
+  opacity: 0.95;
+}
+
+/* Input Fields Text & Placeholder Colors in Dark Mode */
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  color: #111827 ; /* Dark text inside light input boxes */
+  background-color: #ffffff ;
+}
+
+/* Input Placeholder Text */
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #6b7280 ; /* Soft visible gray placeholder */
+}
+
+/* Wishlist Button Styling */
+.wishlist-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Default Heart Outline / Muted Fill */
+.heart-icon {
+  fill: none;
+  stroke: #64748b;
+  stroke-width: 2;
+  transition: fill 0.3s ease, stroke 0.3s ease, transform 0.2s ease;
+  filter: drop-shadow(0 2px 6px rgba(236, 72, 153, 0.3));
+}
+
+/* Active State (Saved to Wishlist) */
+.wishlist-btn.active .heart-icon {
+  fill: #ff007f;
+  stroke: #ff007f;
+  animation: heartPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Pop Animation */
+@keyframes heartPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Dark Mode Support */
+body.dark-theme .wishlist-btn {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+body.dark-theme .heart-icon {
+  stroke: #94a3b8;
+}
+
+/* Glassmorphism Blend for Heart Button */
+.wishlist-btn, 
+.heart-btn, 
+.wishlist-icon-container {
+  /* Soft frosted glass effect instead of solid white */
+  background: transparent ;
+  background-color: transparent;
+  border: none; 
+  backdrop-filter: none ;
+  -webkit-backdrop-filter: none ;
+  padding: 0;
+  
+  /* Delicate border to define the shape */
+  border: 1px solid rgba(255, 255, 255, 0.4) ;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) ;
+  
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.wishlist-btn:hover {
+  background: rgba(255, 255, 255, 0.4) ;
+  transform: scale(1.08);
+}
+
+/* Dark Mode Adaptation */
+body.dark-theme .wishlist-btn,
+body.dark-theme .heart-btn {
+  background: rgba(255, 255, 255, 0.08) ;
+  border-color: rgba(255, 255, 255, 0.15) ;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) ;
+}
+
+/* Ensure SVG icon inherits full visibility */
+.wishlist-btn svg,
+.heart-btn svg,
+.heart-icon {
+  fill: #ffffff ; /* Soft pink fill */
+  stroke: #f472b6 ; /* Defined heart border */
+  filter: drop-shadow(0 2px 8px rgba(236, 72, 153, 0.3)); /* Floating subtle glow */
+  transition: transform 0.2s ease, fill 0.3s ease;
+}
+
+/* Hover Scale Effect */
+.wishlist-btn:hover svg,
+.heart-btn:hover svg {
+  transform: scale(1.15);
+}
+
+/* Dark Mode Heart Glow Adjustments */
+body.dark-theme .wishlist-btn svg,
+body.dark-theme .heart-btn svg,
+body.dark-theme .heart-icon {
+  fill: #ffffff ;
+  stroke: #f472b6 ;
+  filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.6));
+}
+
+
+#success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15), 
+              0 0 30px rgba(255, 255, 255, 0.5) inset;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Typography */
+#success-message h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ec4899 0%, #9333ea 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+#success-message p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+
+/* Cute Call To Action Button */
+.continue-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #000000 0%, #1e1b4b 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(236, 72, 153, 0.3);
+}
+
+/* Dark Mode Adjustments */
+body.dark-theme #success-message {
+  background: rgba(15, 23, 42, 0.6) ;
+  border-color: rgba(255, 255, 255, 0.15) ;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) ;
+}
+
+body.dark-theme #success-message p {
+  color: #cbd5e1 ;
+}
+
+body.dark-theme .continue-btn {
+  background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+}
+
+/* Animations */
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseSparkle {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Outer Modal Shell */
+body.dark-theme .form-container {
+  background: rgba(15, 23, 42, 0.85) ;
+  backdrop-filter: blur(20px) ;
+  -webkit-backdrop-filter: blur(20px) ;
+  border: 1px solid rgba(255, 255, 255, 0.12) ;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+              0 0 30px rgba(147, 51, 234, 0.15) ;
+}
+
+/* Top Banner Header Card */
+body.dark-theme .form-card {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.25) 0%, rgba(236, 72, 153, 0.25) 100%) ;
+  border: 1px solid rgba(255, 255, 255, 0.15) ;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05) ;
+}
+
+body.dark-theme .form-card h3 {
+  color: #ffffff ;
+  text-shadow: 0 2px 10px rgba(236, 72, 153, 0.3);
+}
+
+body.dark-theme .form-card p {
+  color: #e2e8f0 ;
+}
+
+/* Input Labels */
+body.dark-theme .input-group label {
+  color: #cbd5e1 ;
+  font-weight: 500;
+}
+
+/* Input Text Fields */
+body.dark-theme .input-group input {
+  background: rgba(30, 41, 59, 0.7) ;
+  color: #ffffff ;
+  border: 1px solid rgba(255, 255, 255, 0.15) ;
+  box-shadow: none ;
+  transition: all 0.3s ease ;
+}
+
+body.dark-theme .input-group input::placeholder {
+  color: #94a3b8 ;
+}
+
+/* Focus Glow for Inputs */
+body.dark-theme .input-group input:focus {
+  border-color: #ec4899 ;
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.4) ;
+  outline: none ;
+}
+
+/* Subscribe Button Glow */
+body.dark-theme .btn-submit {
+  background: linear-gradient(135deg, #ec4899 0%, #9333ea 100%) ;
+  color: #ffffff ;
+  border: none ;
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.35) ;
+  transition: transform 0.2s ease, box-shadow 0.2s ease ;
+}
+
+body.dark-theme .btn-submit:hover {
+  transform: translateY(-2px) ;
+  box-shadow: 0 12px 25px rgba(236, 72, 153, 0.5) ;
+}
+
+/* Close Button Icon */
+body.dark-theme .form-container .close-btn {
+  color: #94a3b8 ;
+  transition: color 0.2s ease ;
+}
+
+body.dark-theme .form-container .close-btn:hover {
+  color: #ffffff ;
 }

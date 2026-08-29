@@ -18,11 +18,21 @@
 
     <!-- NAVBAR HEADING -->
     <nav>
-        <a href="#hero">Clothes</a>
         <a href="#deals">Summer Deals</a>
+        <a href="#collection">Collection</a>
         <a href="#Join">Join</a>
+        <div class="product-card" data-id="product-1">
+  <button class="wishlist-btn" aria-label="Add to Wishlist">
+    <svg class="heart-icon" viewBox="0 0 24 24" width="24" height="24">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+  </button>
+  <!-- Product Image & Details -->
+</div>
         <button id="theme-toggle" class="theme-toggle-btn">Dark</button>
     </nav>
+
+
 
     </header>
     <main>
@@ -31,7 +41,7 @@
         <section class="hero" id="hero>
             <div class="hero-text">
                  <span class="stage-tag">// NEW ARRIVALS 2026</span>
-                    <h1 class="hero-title"><span class="gradient-initial">C</span>lothes</h1>
+                    <h2 class="hero-title"><span class="gradient-initial">C</span>lothes</h2>
                     <p class="hero-subtitle">
                         Unapologetically bold. Effortlessly chic. Redefine your everyday rotation with head-turning streetwear and luxury essentials crafted to get noticed.
                     </p>
@@ -78,7 +88,7 @@
                 <p>
                     Get tank tops, tube tops, cami, kaaftan and a lot more at one place!!
                 </p>
-                <a href="#" class="card-link">Shop Tops &rarr;</a>
+                <a href="#Join" class="card-link">Shop Tops &rarr;</a>
                 </div>
             </div>
 
@@ -92,7 +102,7 @@
                     <h3>Bottoms</h3>
                 <p>Want Shorts? Trousers? Jeans?<br>
                      We got you!</p>
-                     <a href="#" class="card-link">Shop Bottoms &rarr;</a>
+                     <a href="#Join" class="card-link">Shop Bottoms &rarr;</a>
                 </div>
             </div>
 
@@ -107,7 +117,7 @@
                     <h3>Accessories</h3>
             <p>Jhumkas, Maangtikas, Necklaces... <br>
             Name it. We have it.</p>
-            <a href="#" class="card-link">Shop Accessories &rarr;</a>
+            <a href="#Join" class="card-link">Shop Accessories &rarr;</a>
             </div>
         </div>
     </div>
@@ -115,7 +125,7 @@
         </section>
 
         <!-- Featured Collections Grid -->
-<section class="collections-section">
+<section id="collection" class="collections-section">
  <div class="editorial-heading-wrapper">
     <span class="stage-tag">// CURATED LOOKS</span>
     <h2 class="editorial-title">Featured Collections</h2>
@@ -127,7 +137,7 @@
       <div class="banner-content">
         <span>NEW DROP</span>
         <h3>Urban Streetwear</h3>
-        <a href="#" class="banner-btn">Explore Edit &rarr;</a>
+        <a href="#Join" class="banner-btn">Explore Edit &rarr;</a>
       </div>
     </div>
     
@@ -135,7 +145,7 @@
       <img src="indian.jpg" alt="Ethnic Glam">
       <div class="banner-content">
         <h3>Ethnic Glam</h3>
-        <a href="#" class="banner-btn">Shop Now &rarr;</a>
+        <a href="#Join" class="banner-btn">Shop Now &rarr;</a>
       </div>
     </div>
     
@@ -143,7 +153,7 @@
       <img src="glam.jpg" alt="Minimalist Essentials">
       <div class="banner-content">
         <h3>Minimal Essentials</h3>
-        <a href="#" class="banner-btn">Shop Now &rarr;</a>
+        <a href="#Join" class="banner-btn">Shop Now &rarr;</a>
       </div>
     </div>
   </div>
@@ -153,14 +163,16 @@
 
         <div class="modal-overlay" id="Join">
             <section id="Join" class="form-container">
+              <a href="#" class="close-btn">&times;</a>
+
+              <div id="modal-body">
                 <div class="form-card">
-                    <a href="#" class="close-btn">&times;</a>
                     <h3>
                         Join Our Newsletter!!
                     </h3>
                     <p>Get early access to new releases & exclusive deals!</p>
                 </div>
-            <form>
+            <form id="newsletter-form">
                 <div class="input-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" placeholder="Enter your name" required>
@@ -171,6 +183,15 @@
                 </div>
                 <button type="submit" class="btn-submit">Subscribe Now!</button>
             </form>
+              </div>
+                
+
+            <div id="success-message" style="display: none;">
+    <h3>Yay! You're on the list! 🎉</h3>
+    <p>Thank you for joining us! <br>Check your inbox soon for exclusive drops & secret deals.</p>
+    <a href="#" class="continue-btn" onclick="document.getElementById('Join').style.display='none'; return false;">Continue Shopping ✨</a>
+</div>
+
         </section>
         </div>
     </main>
