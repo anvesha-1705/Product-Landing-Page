@@ -23,6 +23,25 @@ footer *, .main-footer *, .footer * {
   
 }
 
+html, body, body.dark-theme {
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+   height: auto;
+    display: block;
+}
+
+.hero > * {
+  min-width: 0;
+}
+.banner-grid > * {
+  min-width: 0;
+}
+
 header
 body, 
 main, 
@@ -34,6 +53,7 @@ section,
     background-size: 400% 400%;
     animation: gradientBG 12s ease infinite;
 }
+
 
 body.dark-theme footer *, 
 body.dark-theme .main-footer *, 
@@ -106,6 +126,7 @@ body{
     background-color: #fce7f3;
     color: #111827 ;
     transition: background-color 0.3s ease, color 0.25s ease;
+    
 }
 
 @keyframes gradientBG {
@@ -344,6 +365,7 @@ body.dark-theme h1, h2 {
 
 .hero-image-container {
   position: relative;
+  max-width: 100%;
   height: 480px;
   display: flex;
   align-items: center;
@@ -353,8 +375,8 @@ body.dark-theme h1, h2 {
 .hero-image img{
     position: relative;
   z-index: 3;
-  width: 90%;
-  height: 90%;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 36px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25), 0 0 0 4px rgba(255, 255, 255, 0.8);
@@ -377,7 +399,7 @@ body.dark-theme h1, h2 {
 
 .stage-img {
   width: 100%;
-  height: 440px;
+  height: auto;
   object-fit: cover;
   display: block;
 }
@@ -516,7 +538,7 @@ body.dark-theme h1, h2 {
 
 .card img{
     width: 100%;
-    height: 220px;
+    height: auto;
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
@@ -868,7 +890,7 @@ form{
 
 .banner-card img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   filter: brightness(0.9);
   transition: transform 0.6s ease, filter 0.4s ease;
@@ -1512,3 +1534,177 @@ body.dark-theme .form-container .close-btn:hover {
   color: #ffffff ;
 }
 
+/* Tablet */
+@media (max-width: 900px) {
+  nav a {
+    gap: 12px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .deals-section,
+  .collections-section,
+  .reviews-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 360px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+  .deals-section,
+  .collections-section,
+  .reviews-section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .card, .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+  }
+  .footer-grid {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  
+   header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 8px;
+  }
+
+  nav {
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 6px;
+    width: 100%;
+  }
+
+  .logo {
+    order: 2;
+    padding-bottom: 15px;
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+  }
+
+  #theme-toggle {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    margin-left: 4px;
+  }
+
+  .wishlist-btn {
+    padding: 4px;
+  }
+
+  .heart-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .floating-badge {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    max-width: 200px;
+  }
+
+  .hero,
+  .card-container,
+  .banner-grid,
+  .reviews-grid,
+  .deals-section,
+  .collections-section,
+  .reviews-section,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .hero > *,
+  .card-container > *,
+  .banner-grid > *,
+  .reviews-grid > *,
+  .deals-section > *,
+  .collections-section > *,
+  .reviews-section > *,
+  .footer-grid > * {
+    min-width: 0;
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .banner-card {
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .editorial-title,
+  h2 {
+    font-size: 1.5rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .deals-section,
+  .collections-section,
+  .reviews-section,
+  .editorial-heading-wrapper,
+  .editorial-heading-footer,
+  header,
+  main {
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
