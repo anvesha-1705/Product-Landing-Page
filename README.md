@@ -25,8 +25,8 @@ Savana is a single-page landing page designed to showcase a fashion brand's prod
 ## 🛠️ Tech Stack
 
 - HTML5
-- CSS3 (Flexbox, Grid, Media Queries)
-- JavaScript (DOM interactivity, theme toggle, modal handling)
+- CSS3 
+- JavaScript 
 
 ---
 
@@ -42,7 +42,7 @@ Savana is a single-page landing page designed to showcase a fashion brand's prod
 
 ---
 
-**🔗 Live Demo:** [anvesha-1705.github.io/Product-Landing-Page]
+## 🔗 Live Demo:
 (https://anvesha-1705.github.io/Product-Landing-Page/) 🌐
 
 ---
